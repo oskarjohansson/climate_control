@@ -866,7 +866,7 @@ Wire Wire Line
 Wire Wire Line
 	1200 3300 1550 3300
 Text Notes 700  2750 0    50   ~ 0
-Boost charger
+Buck battery charger. 5 V to battery
 Wire Notes Line
 	700  5100 700  7650
 Wire Notes Line
