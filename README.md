@@ -1,6 +1,8 @@
 # Boot Climate Control
 > Created by Benjamin Lundgren & Oskar Johansson
 
+Based on [Ski boots hearing system](https://hackaday.io/project/163132-ski-boots-heating-system). 
+
 ## Goals 
 > The goal of the Boot Climate Control (BCC)
 ```
