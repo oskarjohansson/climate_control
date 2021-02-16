@@ -885,6 +885,4 @@ Wire Notes Line
 	4150 750  700  750 
 Wire Notes Line
 	700  750  700  2500
-Text Notes 700  750  0    50   ~ 0
-Battery input with battery protection
 $EndSCHEMATC

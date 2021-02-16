@@ -1,0 +1,26 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TP4056
+D Battery USB Charger
+K Battery 1S USB Charge
+F https://datasheet.lcsc.com/szlcsc/1809261820_TOPPOWER-Nanjing-Extension-Microelectronics-TP4056-42-ESOP8_C16581.pdf
+$ENDCMP
+#
+$CMP TPS61230DRC
+D High Efficiency Synchronous Step Up Converters with 5-A Switches, 2.3-5.5V Input Voltage, VSON-10
+K boost converter switching adjustable 5A-switch VSON-10
+F http://www.ti.com/lit/ds/symlink/tps61232.pdf
+$ENDCMP
+#
+$CMP USB_C
+D USB 2.0-only Type-C Receptacle connector
+K usb universal serial bus type-C USB2.0
+F https://www.usb.org/sites/default/files/documents/usb_type-c.zip
+$ENDCMP
+#
+$CMP XB8089A
+D One Cell Battery Protection
+F https://datasheet.lcsc.com/szlcsc/1811151451_XySemi-XB8089A_C83315.pdf
+$ENDCMP
+#
+#End Doc Library

@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name climate_control)(type KiCad)(uri ${KIPRJMOD}/library/climate_control.pretty)(options "")(descr ""))
+)
