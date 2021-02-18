@@ -758,19 +758,6 @@ Wire Wire Line
 	3400 3600 3400 3550
 Text Notes 1050 4650 0    50   ~ 0
 Vprog = 1V\nIbat = Vprog/Rprog * 1200\nRprog = 2400: Ibat = 500 mA
-$Comp
-L Device:R_Small R6
-U 1 1 6040DBAC
-P 1950 3100
-F 0 "R6" H 2009 3146 50  0000 L CNN
-F 1 "0R4" H 2009 3055 50  0000 L CNN
-F 2 "" H 1950 3100 50  0001 C CNN
-F 3 "~" H 1950 3100 50  0001 C CNN
-	1    1950 3100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1950 3300 1950 3200
 Wire Wire Line
 	1950 3300 1950 3600
 Connection ~ 1950 3300
@@ -4440,4 +4427,6 @@ F 3 "~" H 6650 9800 50  0001 C CNN
 $EndComp
 Text Notes 9200 1100 0    50   ~ 0
 	MCW-0530-1R0-N1
+Wire Wire Line
+	1950 3000 1950 3300
 $EndSCHEMATC
