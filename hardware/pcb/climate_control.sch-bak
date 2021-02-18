@@ -16,13 +16,13 @@ $EndDescr
 $Comp
 L Connector:Screw_Terminal_01x02 J4
 U 1 1 602C2BFA
-P 4950 1500
-F 0 "J4" H 4868 1175 50  0000 C CNN
-F 1 "HeatElement" H 4868 1266 50  0000 C CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 4950 1500 50  0001 C CNN
-F 3 "~" H 4950 1500 50  0001 C CNN
-	1    4950 1500
-	-1   0    0    -1  
+P 4950 1600
+F 0 "J4" H 4868 1275 50  0000 C CNN
+F 1 "HeatElement" H 4868 1366 50  0000 C CNN
+F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 4950 1600 50  0001 C CNN
+F 3 "~" H 4950 1600 50  0001 C CNN
+	1    4950 1600
+	-1   0    0    1   
 $EndComp
 $Comp
 L climate_control:TPS61230DRC U4
