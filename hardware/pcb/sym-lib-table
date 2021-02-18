@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name climate_control)(type Legacy)(uri ${KIPRJMOD}/library/climate_control.lib)(options "")(descr ""))
+  (lib (name climate_control-rescue)(type Legacy)(uri ${KIPRJMOD}/climate_control-rescue.lib)(options "")(descr ""))
 )
