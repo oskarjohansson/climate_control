@@ -520,22 +520,6 @@ F 3 "" H 3100 6400 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3100 6400 3100 6300
-Wire Wire Line
-	2050 6200 2150 6200
-Wire Wire Line
-	2150 6200 2150 6300
-Wire Wire Line
-	2150 6300 2050 6300
-Wire Wire Line
-	2050 6400 2150 6400
-Wire Wire Line
-	2150 6400 2150 6500
-Wire Wire Line
-	2150 6500 2050 6500
-Text GLabel 2150 6200 2    50   Input ~ 0
-USB_D-
-Text GLabel 2150 6400 2    50   Input ~ 0
-USB_D+
 NoConn ~ 2050 6800
 NoConn ~ 2050 6900
 $Comp
@@ -4214,4 +4198,8 @@ Text GLabel 2250 8700 2    50   Input ~ 0
 LED
 Wire Wire Line
 	1600 8900 2250 8900
+NoConn ~ 2050 6200
+NoConn ~ 2050 6300
+NoConn ~ 2050 6400
+NoConn ~ 2050 6500
 $EndSCHEMATC
