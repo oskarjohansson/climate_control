@@ -4429,4 +4429,24 @@ Text Notes 9200 1100 0    50   ~ 0
 	MCW-0530-1R0-N1
 Wire Wire Line
 	1950 3000 1950 3300
+Wire Notes Line
+	2250 10100 2250 9000
+Wire Notes Line
+	2250 9000 1450 9000
+Wire Notes Line
+	1450 9000 1450 10100
+Wire Notes Line
+	1450 10100 2250 10100
+Text Notes 1450 10200 0    50   ~ 0
+Skip and use internal pullup and debouncing?
+Wire Notes Line
+	3300 9400 3300 8400
+Wire Notes Line
+	3300 8400 2350 8400
+Wire Notes Line
+	2350 8400 2350 9400
+Wire Notes Line
+	2350 9400 3300 9400
+Text Notes 2350 9600 0    50   ~ 0
+Remove? Pin can source up to 40mA\nwith approx 30 ohm series resistance
 $EndSCHEMATC

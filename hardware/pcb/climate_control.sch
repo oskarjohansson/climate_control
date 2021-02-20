@@ -972,59 +972,8 @@ Wire Wire Line
 	2100 8500 2100 8600
 Wire Wire Line
 	2100 8600 1950 8600
-$Comp
-L Device:Q_NMOS_GSD Q1
-U 1 1 6053D730
-P 2650 8800
-F 0 "Q1" V 2992 8800 50  0000 C CNN
-F 1 "NTR3C21NZ" V 2901 8800 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 2850 8900 50  0001 C CNN
-F 3 "~" H 2650 8800 50  0001 C CNN
-	1    2650 8800
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	1600 8700 2250 8700
-$Comp
-L power:GND #PWR0135
-U 1 1 60544422
-P 3000 8700
-F 0 "#PWR0135" H 3000 8450 50  0001 C CNN
-F 1 "GND" H 3005 8527 50  0000 C CNN
-F 2 "" H 3000 8700 50  0001 C CNN
-F 3 "" H 3000 8700 50  0001 C CNN
-	1    3000 8700
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	3000 8700 2900 8700
-Text GLabel 2650 9100 3    50   Input ~ 0
-LED
-Wire Wire Line
-	2650 9000 2650 9050
-$Comp
-L Device:R_Small R10
-U 1 1 60558C74
-P 2900 8900
-F 0 "R10" H 2959 8946 50  0000 L CNN
-F 1 "10k" H 2959 8855 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" H 2900 8900 50  0001 C CNN
-F 3 "~" H 2900 8900 50  0001 C CNN
-	1    2900 8900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 8800 2900 8700
-Connection ~ 2900 8700
-Wire Wire Line
-	2900 8700 2850 8700
-Wire Wire Line
-	2900 9000 2900 9050
-Wire Wire Line
-	2900 9050 2650 9050
-Connection ~ 2650 9050
-Wire Wire Line
-	2650 9050 2650 9100
 $Comp
 L power:GND #PWR0136
 U 1 1 6057406C
@@ -1038,82 +987,7 @@ F 3 "" H 1800 8800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1800 8800 1600 8800
-$Comp
-L Device:R_Small R3
-U 1 1 60579CBB
-P 1650 9300
-F 0 "R3" H 1709 9346 50  0000 L CNN
-F 1 "1k" H 1709 9255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" H 1650 9300 50  0001 C CNN
-F 3 "~" H 1650 9300 50  0001 C CNN
-	1    1650 9300
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	1600 8900 1650 8900
-Wire Wire Line
-	1650 8900 1650 9200
-$Comp
-L power:VCC #PWR0137
-U 1 1 60580ABD
-P 1900 9100
-F 0 "#PWR0137" H 1900 8950 50  0001 C CNN
-F 1 "VCC" H 1915 9273 50  0000 C CNN
-F 2 "" H 1900 9100 50  0001 C CNN
-F 3 "" H 1900 9100 50  0001 C CNN
-	1    1900 9100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_Small R5
-U 1 1 60588211
-P 1900 9300
-F 0 "R5" H 1959 9346 50  0000 L CNN
-F 1 "10k" H 1959 9255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" H 1900 9300 50  0001 C CNN
-F 3 "~" H 1900 9300 50  0001 C CNN
-	1    1900 9300
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	1900 9100 1900 9200
-$Comp
-L Device:C_Small C2
-U 1 1 605ACD1E
-P 1900 9600
-F 0 "C2" H 1992 9646 50  0000 L CNN
-F 1 "100nF" H 1992 9555 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 1900 9600 50  0001 C CNN
-F 3 "~" H 1900 9600 50  0001 C CNN
-	1    1900 9600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0138
-U 1 1 605AE9A5
-P 1900 9800
-F 0 "#PWR0138" H 1900 9550 50  0001 C CNN
-F 1 "GND" H 1905 9627 50  0000 C CNN
-F 2 "" H 1900 9800 50  0001 C CNN
-F 3 "" H 1900 9800 50  0001 C CNN
-	1    1900 9800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1900 9800 1900 9700
-Wire Wire Line
-	1900 9500 1900 9450
-Wire Wire Line
-	1900 9450 1650 9450
-Wire Wire Line
-	1650 9450 1650 9400
-Connection ~ 1900 9450
-Wire Wire Line
-	1900 9450 1900 9400
-Wire Wire Line
-	1650 9450 1400 9450
-Connection ~ 1650 9450
-Text GLabel 1400 9450 0    50   Input ~ 0
+Text GLabel 2250 8900 2    50   Input ~ 0
 SWITCH
 Text Notes 5100 5800 0    50   ~ 0
 To be powered by USB \nwhen no battery is attached.
@@ -1138,53 +1012,6 @@ Wire Notes Line
 	700  7950 700  10300
 Text Notes 700  7950 0    50   ~ 0
 LED Switch
-$Comp
-L Device:R_Small R7
-U 1 1 606B7180
-P 2400 5700
-F 0 "R7" H 2459 5746 50  0000 L CNN
-F 1 "1k" H 2459 5655 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" H 2400 5700 50  0001 C CNN
-F 3 "~" H 2400 5700 50  0001 C CNN
-	1    2400 5700
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R_Small R8
-U 1 1 606B7BF9
-P 2650 5500
-F 0 "R8" H 2709 5546 50  0000 L CNN
-F 1 "10k" H 2709 5455 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" H 2650 5500 50  0001 C CNN
-F 3 "~" H 2650 5500 50  0001 C CNN
-	1    2650 5500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2500 5700 2650 5700
-Wire Wire Line
-	2650 5700 2650 5600
-Wire Wire Line
-	2300 5700 2150 5700
-Connection ~ 2150 5700
-$Comp
-L power:GND #PWR0141
-U 1 1 606C61BF
-P 2650 5350
-F 0 "#PWR0141" H 2650 5100 50  0001 C CNN
-F 1 "GND" H 2655 5177 50  0000 C CNN
-F 2 "" H 2650 5350 50  0001 C CNN
-F 3 "" H 2650 5350 50  0001 C CNN
-	1    2650 5350
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2650 5350 2650 5400
-Wire Wire Line
-	2650 5700 2800 5700
-Connection ~ 2650 5700
-Text GLabel 2800 5700 2    50   Input ~ 0
-USB_DET
 Text GLabel 5700 7950 2    50   Input ~ 0
 USB_DET
 Text Notes 5300 6500 0    50   ~ 0
@@ -4344,52 +4171,6 @@ Text Notes 4300 2600 0    50   ~ 0
 https://www.mouser.se/datasheet/2/308/NTR3C21NZ_D-1814252.pdf
 Wire Wire Line
 	8200 1700 8200 1750
-$Comp
-L Device:LED_Small D2
-U 1 1 603A4367
-P 2650 8300
-F 0 "D2" V 2604 8398 50  0000 L CNN
-F 1 "STAT" V 2695 8398 50  0000 L CNN
-F 2 "Diode_SMD:D_0603_1608Metric" V 2650 8300 50  0001 C CNN
-F 3 "~" V 2650 8300 50  0001 C CNN
-	1    2650 8300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_Small R16
-U 1 1 603A9488
-P 2400 8300
-F 0 "R16" H 2459 8346 50  0000 L CNN
-F 1 "x" H 2459 8255 50  0000 L CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" H 2400 8300 50  0001 C CNN
-F 3 "~" H 2400 8300 50  0001 C CNN
-	1    2400 8300
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	2300 8300 2250 8300
-Wire Wire Line
-	2250 8300 2250 8700
-Connection ~ 2250 8700
-Wire Wire Line
-	2250 8700 2450 8700
-Wire Wire Line
-	2500 8300 2550 8300
-$Comp
-L power:+VSW #PWR0134
-U 1 1 603BAE89
-P 2850 8250
-F 0 "#PWR0134" H 2850 8100 50  0001 C CNN
-F 1 "+VSW" H 2865 8423 50  0000 C CNN
-F 2 "" H 2850 8250 50  0001 C CNN
-F 3 "" H 2850 8250 50  0001 C CNN
-	1    2850 8250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2850 8250 2850 8300
-Wire Wire Line
-	2850 8300 2750 8300
 Text Notes 6350 7300 0    50   ~ 0
 ECS-80-12-33-JGN-TR
 Text GLabel 6450 9700 0    50   Input ~ 0
@@ -4429,24 +4210,8 @@ Text Notes 9200 1100 0    50   ~ 0
 	MCW-0530-1R0-N1
 Wire Wire Line
 	1950 3000 1950 3300
-Wire Notes Line
-	2250 10100 2250 9000
-Wire Notes Line
-	2250 9000 1450 9000
-Wire Notes Line
-	1450 9000 1450 10100
-Wire Notes Line
-	1450 10100 2250 10100
-Text Notes 1450 10200 0    50   ~ 0
-Skip and use internal pullup and debouncing?
-Wire Notes Line
-	3300 9400 3300 8400
-Wire Notes Line
-	3300 8400 2350 8400
-Wire Notes Line
-	2350 8400 2350 9400
-Wire Notes Line
-	2350 9400 3300 9400
-Text Notes 2350 9600 0    50   ~ 0
-Remove? Pin can source up to 40mA\nwith approx 30 ohm series resistance
+Text GLabel 2250 8700 2    50   Input ~ 0
+LED
+Wire Wire Line
+	1600 8900 2250 8900
 $EndSCHEMATC
