@@ -889,46 +889,6 @@ LED
 Text GLabel 5700 8750 2    50   Input ~ 0
 SWITCH
 $Comp
-L Device:Crystal_GND2_Small Y1
-U 1 1 6050B57C
-P 6750 7500
-F 0 "Y1" V 6796 7588 50  0000 L CNN
-F 1 "8MHz" V 6705 7588 50  0000 L CNN
-F 2 "climate_control:ECX-32" H 6750 7500 50  0001 C CNN
-F 3 "~" H 6750 7500 50  0001 C CNN
-	1    6750 7500
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	5700 7450 6400 7450
-Wire Wire Line
-	6400 7450 6400 7350
-Wire Wire Line
-	6400 7350 6750 7350
-Wire Wire Line
-	6750 7350 6750 7400
-Wire Wire Line
-	5700 7550 6400 7550
-Wire Wire Line
-	6400 7650 6750 7650
-Wire Wire Line
-	6750 7650 6750 7600
-Wire Wire Line
-	6400 7550 6400 7650
-$Comp
-L power:GND #PWR0133
-U 1 1 60524C00
-P 6950 7500
-F 0 "#PWR0133" H 6950 7250 50  0001 C CNN
-F 1 "GND" H 6955 7327 50  0000 C CNN
-F 2 "" H 6950 7500 50  0001 C CNN
-F 3 "" H 6950 7500 50  0001 C CNN
-	1    6950 7500
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	6950 7500 6850 7500
-$Comp
 L Connector:Screw_Terminal_01x04 J1
 U 1 1 6052D28F
 P 1400 8800
@@ -4149,8 +4109,6 @@ Text Notes 4300 2600 0    50   ~ 0
 https://www.mouser.se/datasheet/2/308/NTR3C21NZ_D-1814252.pdf
 Wire Wire Line
 	8200 1700 8200 1750
-Text Notes 6350 7300 0    50   ~ 0
-ECS-80-12-33-JGN-TR
 Text GLabel 6450 9700 0    50   Input ~ 0
 MISO
 Text GLabel 6450 9800 0    50   Input ~ 0
