@@ -1,4 +1,4 @@
-update=ons 17 feb 2021 14:20:39
+update=tor 25 feb 2021 17:56:14
 version=1
 last_client=kicad
 [general]
@@ -27,12 +27,12 @@ version=1
 PageLayoutDescrFile=
 LastNetListRead=climate_control.net
 CopperLayerCount=2
-BoardThickness=1.6
+BoardThickness=1
 AllowMicroVias=0
 AllowBlindVias=0
 RequireCourtyardDefinitions=0
 ProhibitOverlappingCourtyards=1
-MinTrackWidth=0.2
+MinTrackWidth=0.15
 MinViaDiameter=0.4
 MinViaDrill=0.3
 MinMicroViaDiameter=0.2

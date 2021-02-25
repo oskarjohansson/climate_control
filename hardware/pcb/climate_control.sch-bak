@@ -4109,8 +4109,6 @@ Text Notes 4300 2600 0    50   ~ 0
 https://www.mouser.se/datasheet/2/308/NTR3C21NZ_D-1814252.pdf
 Wire Wire Line
 	8200 1700 8200 1750
-Text Notes 6350 7300 0    50   ~ 0
-ECS-80-12-33-JGN-TR
 Text GLabel 6450 9700 0    50   Input ~ 0
 MISO
 Text GLabel 6450 9800 0    50   Input ~ 0

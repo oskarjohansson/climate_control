@@ -4143,7 +4143,7 @@ F 3 "~" H 6650 9800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 9200 1100 0    50   ~ 0
-	MCW-0530-1R0-N1
+MCW-0530-1R0-N1
 Wire Wire Line
 	1950 3000 1950 3300
 Text GLabel 2250 8700 2    50   Input ~ 0
