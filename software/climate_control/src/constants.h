@@ -11,7 +11,7 @@ const int ledPin = 10;        //PB2
 const int batSensePin = A0;
 
 const int debouncingTime = 50;
-const int groupClickInterval = 500;
+const int groupClickInterval = 300;
 const int longClickDuration = 1000;
 const int inactiveTime = 5000;
 

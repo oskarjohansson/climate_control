@@ -52,6 +52,7 @@ class Button
                 (getElapsedTime(filterOnTime) > longClickDuration))
             {
                 state = clickTypes::longClick;
+                return state;
             }
             else if (keyChanged && !filteredState)
             {
@@ -69,6 +70,7 @@ class Button
                 getElapsedTime(filterOffTime) > groupClickInterval)
             {
                 state = clickTypes::noClick;
+                return clickTypes::singleClick;
             }
             else if (keyChanged && !filteredState)
             {
@@ -81,6 +83,7 @@ class Button
                 getElapsedTime(filterOffTime) > groupClickInterval)
             {
                 state = clickTypes::noClick;
+                return clickTypes::doubleClick;
             }
             else if (keyChanged && !filteredState)
             {
@@ -93,9 +96,10 @@ class Button
                 getElapsedTime(filterOffTime) > groupClickInterval)
             {
                 state = clickTypes::noClick;
+                return clickTypes::tripleClick;
             }
         }
-        return state;
+        return clickTypes::noClick;;
     }
     bool isActive()
     {

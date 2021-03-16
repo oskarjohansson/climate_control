@@ -5,19 +5,45 @@
 #include <constants.h>
 
 /*
-uint8_t getSoc();
+DONE: Verify debouncing and click pattern detection
+DONE: Verify Led output
+DONE: Verify boost circuit working
 
-inline uint32_t getElapsedTime(uint32_t sinceTime);
-void flash(uint8_t pin, uint8_t flashes, uint16_t time_on, uint16_t time_off);
-void goToSleep();
-void wakeFromSleep();
+TODO: Verify getSoc()
+TODO: Verify sleep function (measure current draw)
+TODO: Verify heater function
 */
 Button switchButton(switchPin);
 Heater heater(heaterPwmPin, boostEnablePin, ledPin);
 
 void setup()
 {
+  pinMode(ledPin,OUTPUT);
+  pinMode(boostEnablePin,OUTPUT);
+  digitalWrite(boostEnablePin,HIGH);
 }
+
+/* Test:
+void loop()
+{
+  int click = switchButton.poll();
+    switch (click)
+    {
+    case clickTypes::singleClick:
+      flash(ledPin, 1, 250, 250);
+      break;
+    case clickTypes::doubleClick:
+      flash(ledPin, 2, 250, 250);
+      break;
+    case clickTypes::tripleClick:
+      flash(ledPin, 3, 250, 250);
+      break;
+    case clickTypes::longClick:
+      flash(ledPin, 1, 750, 750);
+      break;
+    }
+}*/
+
 
 void loop()
 {
