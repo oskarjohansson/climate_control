@@ -31,7 +31,7 @@ class Heater
     }
     void resume()
     {
-        analogWrite(pwmPin, currentLevel);
+        analogWrite(pwmPin, heaterLevels[currentLevel]);
         digitalWrite(enablePin, HIGH);
         active = true;
     }
@@ -42,30 +42,29 @@ class Heater
         active = false;
         currentLevel = 0;
     }
+    void on()
+    {
+        currentLevel = heaterStartLevel;
+        digitalWrite(enablePin, HIGH);
+        analogWrite(pwmPin, heaterLevels[currentLevel]);
+        active = true;
+    }
 
     void increment()
     {
-        if (!active && !currentLevel)
-            currentLevel = heaterStartValue;
-        else if (currentLevel >  255-heaterIncrement)
-            currentLevel = 255;
-        else
-            currentLevel += heaterIncrement;
+        if (currentLevel < (heaterNumberOfLevels))
+            currentLevel ++;
         active = true;
         digitalWrite(enablePin, HIGH);
-        analogWrite(pwmPin, currentLevel);
+        analogWrite(pwmPin, heaterLevels[currentLevel]);
     }
     void decrement()
     {
-        if (!active && !currentLevel)
-            currentLevel = heaterStartValue;
-        else if (currentLevel <  heaterIncrement)
-            currentLevel = 0;
-        else
-            currentLevel -= heaterIncrement;
+        if (currentLevel > 0)
+            currentLevel --;
         active = true;
         digitalWrite(enablePin, HIGH);
-        analogWrite(pwmPin, currentLevel);
+        analogWrite(pwmPin, heaterLevels[currentLevel]);
 
     }
     bool isActive()

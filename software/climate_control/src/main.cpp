@@ -16,34 +16,17 @@ TODO: Verify heater function
 Button switchButton(switchPin);
 Heater heater(heaterPwmPin, boostEnablePin, ledPin);
 
+
 void setup()
 {
-  pinMode(ledPin,OUTPUT);
+  Serial.begin(9600);
+  Serial.println("Hello World!");
+  pinMode(ledPin,INPUT);
+  flash(ledPin, 3, 250, 250);
   pinMode(boostEnablePin,OUTPUT);
   digitalWrite(boostEnablePin,HIGH);
+  analogReference(INTERNAL1V1);
 }
-
-/* Test:
-void loop()
-{
-  int click = switchButton.poll();
-    switch (click)
-    {
-    case clickTypes::singleClick:
-      flash(ledPin, 1, 250, 250);
-      break;
-    case clickTypes::doubleClick:
-      flash(ledPin, 2, 250, 250);
-      break;
-    case clickTypes::tripleClick:
-      flash(ledPin, 3, 250, 250);
-      break;
-    case clickTypes::longClick:
-      flash(ledPin, 1, 750, 750);
-      break;
-    }
-}*/
-
 
 void loop()
 {
@@ -54,36 +37,53 @@ void loop()
     switch (click)
     {
     case clickTypes::singleClick:
-      heater.increment();
+      Serial.println("Single click detected!");
+      if (heater.isActive())
+        heater.increment();
       break;
     case clickTypes::doubleClick:
-      heater.decrement();
+      Serial.println("Double click detected!");
+      if (heater.isActive())
+        heater.decrement();
       break;
     case clickTypes::tripleClick:
     { // Get battery status
-      heater.pause();
-      delay(10);
-      uint8_t soc = getSoc();
-      if (soc)
-        flash(ledPin, soc, 500, 250);
-      else
-        flash(ledPin, 10, 150, 100);
-      heater.resume();
+      Serial.println("Triple click detected!");
+      //heater.pause();
+      //delay(10);
+      //uint8_t soc = getSoc();
+      //flash(ledPin, soc+1, 500, 250);
+      //heater.resume();
       break;
     }
     case clickTypes::longClick:
-      heater.off();
+      if (heater.isActive())
+      {
+        Serial.println("Turning off heater!");
+        heater.off();
+      }
+      else
+      {
+        Serial.println("Turning on heater!");
+        heater.on();
+      }
       break;
     }
     // If neither heater active nor switchbutton active
     if (!(switchButton.isActive() || heater.isActive()))
+    {
+      Serial.println("Inactive, going to sleep!");
+      delay(25);
       goToSleep();
+    }
   }
   else
   {
+    Serial.println("Undervoltage, going to sleep!!");
+    delay(25);
     //disable heater, led and go to sleep
     heater.off();
-    digitalWrite(ledPin, LOW);
+    //pinMode(ledPin, INPUT);
     goToSleep();
   }
 }

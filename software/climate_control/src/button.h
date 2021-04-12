@@ -10,6 +10,7 @@ class Button
     uint32_t debounceTime;
     uint32_t filterOnTime;
     uint32_t filterOffTime;
+    uint32_t lastActiveTime;
     
 
     uint8_t pinNumber;
@@ -31,20 +32,24 @@ class Button
         {
             debounceTime = millis();
         }
-        else if (getElapsedTime(debounceTime) > debouncingTime)
+        else
         {
-            filteredState = rawState;
-            keyChanged = true;
-            if (filteredState)
+            lastActiveTime = millis();
+            if (getElapsedTime(debounceTime) > debouncingTime)
             {
-                filterOnTime = millis();
-            }
-            else
-            {
-                filterOffTime = millis();
+
+                filteredState = rawState;
+                keyChanged = true;
+                if (filteredState)
+                {
+                    filterOnTime = millis();
+                }
+                else
+                {
+                    filterOffTime = millis();
+                }
             }
         }
-
         // Check for number of clicks
         if (state == clickTypes::noClick)
         {
@@ -103,6 +108,10 @@ class Button
     }
     bool isActive()
     {
-        return getElapsedTime(filterOnTime) > inactiveTime;
+        if (getElapsedTime(lastActiveTime) > inactiveTime)
+        {
+            return false;
+        }
+        return true;
     }
 };

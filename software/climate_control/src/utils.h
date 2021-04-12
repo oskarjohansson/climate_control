@@ -22,6 +22,7 @@ uint8_t getSoc()
 
 void wakeFromSleep()
 {
+    Serial.println("Waking from sleep");
     sleep_disable();
     detachInterrupt(switchInterrupt);
 }
@@ -36,13 +37,13 @@ void goToSleep()
 
 void flash(uint8_t pin, uint8_t flashes, uint16_t time_on, uint16_t time_off)
 {
-    digitalWrite(pin, LOW);
     delay(time_off);
     for (int i = 0; i < flashes; i++)
     {
-        digitalWrite(pin, HIGH);
-        delay(time_on);
+        pinMode(pin, OUTPUT);
         digitalWrite(pin, LOW);
+        delay(time_on);
+        pinMode(pin, INPUT);
         delay(time_off);
     }
 }
