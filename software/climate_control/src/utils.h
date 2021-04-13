@@ -22,16 +22,19 @@ uint8_t getSoc()
 
 void wakeFromSleep()
 {
-    Serial.println("Waking from sleep");
     sleep_disable();
     detachInterrupt(switchInterrupt);
+    Serial.println("Waking from sleep");
 }
 
 void goToSleep()
 {
-    sleep_enable();
     attachInterrupt(switchInterrupt, wakeFromSleep, LOW);
     set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+
+    sleep_enable();
+    sleep_bod_disable();
+    sei();
     sleep_cpu();
 }
 

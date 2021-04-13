@@ -41,12 +41,15 @@ class Heater
         digitalWrite(enablePin, LOW);
         active = false;
         currentLevel = 0;
+        flash(ledPin, 1, 1000, 500);
     }
     void on()
     {
         currentLevel = heaterStartLevel;
         digitalWrite(enablePin, HIGH);
         analogWrite(pwmPin, heaterLevels[currentLevel]);
+        pinMode(ledPin, OUTPUT);
+        digitalWrite(ledPin, LOW);
         active = true;
     }
 
@@ -57,6 +60,9 @@ class Heater
         active = true;
         digitalWrite(enablePin, HIGH);
         analogWrite(pwmPin, heaterLevels[currentLevel]);
+        flash(ledPin, currentLevel+1, 200, 200);
+        pinMode(ledPin, OUTPUT);
+        digitalWrite(ledPin, LOW);
     }
     void decrement()
     {
@@ -65,7 +71,9 @@ class Heater
         active = true;
         digitalWrite(enablePin, HIGH);
         analogWrite(pwmPin, heaterLevels[currentLevel]);
-
+        flash(ledPin, currentLevel+1, 200, 200);
+        pinMode(ledPin, OUTPUT);
+        digitalWrite(ledPin, LOW);
     }
     bool isActive()
     {
