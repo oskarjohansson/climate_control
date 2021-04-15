@@ -8,11 +8,17 @@ inline uint32_t getElapsedTime(uint32_t sinceTime)
 
 uint8_t getSoc()
 {
-    uint16_t batVoltage = analogRead(batSensePin);
+    int batVoltage = 0;
+    for (int i = 0; i < batteryReads; i++)
+    {
+        batVoltage += analogRead(batSensePin);
+    }
+    batVoltage /= batteryReads;
 
     for (int i = batSocVoltageLevels; i; i--)
     {
-        if (batVoltage > batSocVoltage[i])
+        //Serial.print(batVoltage); Serial.print(" "); Serial.print(batSocVoltage[i-1]); Serial.print(" ");
+        if (batVoltage > batSocVoltage[i-1])
         {
             return i;
         }
@@ -29,6 +35,9 @@ void wakeFromSleep()
 
 void goToSleep()
 {
+    pinMode(ledPin, INPUT);
+    digitalWrite(boostEnablePin, LOW);
+    digitalWrite(heaterPwmPin, LOW);
     attachInterrupt(switchInterrupt, wakeFromSleep, LOW);
     set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 

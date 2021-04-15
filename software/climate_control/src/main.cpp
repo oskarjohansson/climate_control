@@ -90,6 +90,7 @@ void loop()
     // Blink battery level led
     else if((now>socLastCycle))
     {
+      Serial.print(Soc); Serial.print(" "); Serial.println(analogRead(batSensePin));
       uint8_t ledMode = socLedPattern[Soc-1][queueIndex];
       if(ledMode) 
       {        
