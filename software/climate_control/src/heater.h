@@ -41,7 +41,7 @@ class Heater
         digitalWrite(enablePin, LOW);
         active = false;
         currentLevel = 0;
-        flash(ledPin, 1, 1000, 500);
+        pinMode(ledPin, INPUT);
     }
     void on()
     {

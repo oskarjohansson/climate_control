@@ -30,21 +30,36 @@ void wakeFromSleep()
 {
     sleep_disable();
     detachInterrupt(switchInterrupt);
-    Serial.println("Waking from sleep");
+    //Serial.println("Waking from sleep");
 }
 
 void goToSleep()
 {
-    pinMode(ledPin, INPUT);
-    digitalWrite(boostEnablePin, LOW);
-    digitalWrite(heaterPwmPin, LOW);
-    attachInterrupt(switchInterrupt, wakeFromSleep, LOW);
-    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 
+    do{
+        while(!digitalRead(switchPin));
+        delay(10);
+    }while(!digitalRead(switchPin));
+
+
+    byte adcsra_save = ADCSRA;
+    ADCSRA = 0;
+
+    attachInterrupt(switchInterrupt, wakeFromSleep, LOW);
+
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
     sleep_enable();
-    sleep_bod_disable();
-    sei();
-    sleep_cpu();
+
+
+    sleep_mode();
+
+    /* wake up here */
+    //sleep_disable();  // Sleep disable is performed in pin change ISR.
+    //detachInterrupt(switchInterrupt);
+
+    power_adc_enable();
+    ADCSRA = adcsra_save;
+    analogReference(INTERNAL1V1);
 }
 
 void flash(uint8_t pin, uint8_t flashes, uint16_t time_on, uint16_t time_off)
